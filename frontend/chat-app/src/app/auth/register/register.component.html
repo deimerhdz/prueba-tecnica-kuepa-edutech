@@ -18,6 +18,7 @@
             <div class="mt-3">
                 <label for="username" class="form__label">Usuario</label>
                 <input type="text" formControlName="username" id="username" class="form__input" placeholder="Usuario"  [ngClass]="{'input__invalid': isValidField('username')}">
+                <small class="text-small">Este usuario es el que debe usar para iniciar sesion, asegurese de guardarlo.</small>
                 @if(isValidField('username')){    
                     <small class="text__invalid">{{getFieldError('username')}}</small>
                     }
@@ -33,7 +34,7 @@
                 <label for="repassword" class="form__label">Confirmar contraseña</label>
                 <input type="password"  formControlName="repassword" id="repassword" class="form__input" placeholder="Contraseña"  [ngClass]="{'input__invalid': isValidField('password')}">
                 @if(isValidField('repassword')){    
-                    <small class="text__invalid">{{getFieldError('repassword')}}</small>
+                    <small class="text__invalid">las contraseña deben ser iguales</small>
                     }
             </div>
             <div class="mt-3">

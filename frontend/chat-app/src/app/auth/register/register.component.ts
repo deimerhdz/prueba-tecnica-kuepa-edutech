@@ -24,6 +24,10 @@ export class RegisterComponent {
     password:['',Validators.required],
     repassword:['',Validators.required],
     role:['',Validators.required]
+  },{
+    validators:[
+      this.validatorService.isFieldOneEqualFieldTwo('password','repassword')
+    ]
   })
   register(){
     if(this.form.invalid){
