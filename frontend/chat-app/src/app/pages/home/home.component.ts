@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
       this.sockectService.ioSocket.emit('get-messages', 'hola');
       console.log(this.sockectService.ioSocket);
      
-   }, 5000)
+   }, 1000)
 
    this.sockectService.messages$().subscribe(data=>{
     this.messages = data.messages;
