@@ -18,12 +18,12 @@ return {
 }
 
 export const register = async(body)=>{
-    const { name, username, password } = body;
+    const { name, username, password,role } = body;
     const userDB = await User.findOne({ username });
     if ( userDB ) {
         throw new Error('User already exists.');
     }
-    const user = new User({ name, username, password });
+    const user = new User({ name, username, password,role });
     const salt = bcryptjs.genSaltSync();
     user.password = bcryptjs.hashSync( password, salt );
     await user.save();

@@ -17,7 +17,6 @@ const UserSchema = Schema({
     role: {
         type: String,
         required: true,
-        default: 'STUDENT',
         emun: ['STUDENT', 'MODERATOR']
     },
     createdAt: { 

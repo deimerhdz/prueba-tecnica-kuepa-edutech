@@ -1,7 +1,7 @@
 import { Message } from "../models/message.js";
 
 export const findAllMessages = async ()=>{
-    const messages = await Message.find().populate('user','name','role');
+    const messages = await Message.find().populate('user');
     return messages
 
 }

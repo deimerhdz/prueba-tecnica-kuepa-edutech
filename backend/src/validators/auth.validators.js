@@ -6,6 +6,7 @@ const registerAuthValidators =[
     check("name").exists().notEmpty(),
     check("username").exists().notEmpty().isLength({min:5,max:15}),
     check("password").exists().notEmpty(),
+    check("role").exists().notEmpty(),
     (req,res,next)=>{
         return validateResults(req,res,next)
     }
