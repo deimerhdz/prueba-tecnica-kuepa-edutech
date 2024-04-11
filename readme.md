@@ -28,7 +28,7 @@ MONGODB_CONNECTION=mongodb://mongo/kuepa-edutech-db
 JWT_SECRET_KEY=jnkdsvids
 ```
 
-``Nota`` para los siguientes comandos debe asegurarse que que tiene una instacia de docker ejecutandose en su sistema operativo, puede ser ejecutando docker desktop en windows o iniciando un servico en el caso de linux.
+``Nota`` para los siguientes comandos debe asegurarse que que tiene una instancia de docker ejecutandose en su sistema operativo, puede ser ejecutando docker desktop en windows o iniciando un servico en el caso de linux.
 
 ``Levantando el contenedor de docker``
 Acceder en la ruta raiz del proyecto ``backend`` y ejecutar los comandos en el siguiente orden
