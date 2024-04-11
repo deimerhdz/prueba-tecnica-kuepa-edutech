@@ -33,6 +33,7 @@ JWT_SECRET_KEY=jnkdsvids
 ``Levantando el contenedor de docker``
 Acceder en la ruta raiz del proyecto ``backend`` y ejecutar los comandos en el siguiente orden
 ```
+  npm install
   docker-compose build
   docker-compose up -d
 ```
@@ -52,7 +53,7 @@ Acceder en la ruta raiz del proyecto ``backend`` y ejecutar los comandos en el s
 
   luego abrir una ventana en el navegador en la ruta ``http://localhost:4200/``
 
-## Author  
+## Autor  
 
 - Deimer Hernandez
 
