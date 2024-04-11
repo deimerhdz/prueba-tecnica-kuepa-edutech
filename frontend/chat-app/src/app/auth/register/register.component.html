@@ -1,0 +1,58 @@
+
+<div class="content">
+    <div class="card">
+        <form  class="card__form" [formGroup]="form" (submit)="register()">
+            <span class="icon">
+                <i class="fa-solid fa-chalkboard title"></i>
+                <h1 class="poppins-medium title">LMS de estudio</h1>
+            </span>
+            <p class="text">Bienvenido a nuestra aula virtual</p>
+            <p class="text">Registrate para continuar</p>
+            <div class="mt-3">
+                <label for="name" class="form__label">Nombre</label>
+                <input type="text" formControlName="name" id="name" class="form__input" placeholder="Usuario"  [ngClass]="{'input__invalid': isValidField('username')}">
+                @if(isValidField('name')){    
+                    <small class="text__invalid">{{getFieldError('name')}}</small>
+                    }
+            </div>
+            <div class="mt-3">
+                <label for="username" class="form__label">Usuario</label>
+                <input type="text" formControlName="username" id="username" class="form__input" placeholder="Usuario"  [ngClass]="{'input__invalid': isValidField('username')}">
+                @if(isValidField('username')){    
+                    <small class="text__invalid">{{getFieldError('username')}}</small>
+                    }
+            </div>
+            <div class="mt-3">
+                <label for="password" class="form__label">Contraseña</label>
+                <input type="password"  formControlName="password" id="password" class="form__input" placeholder="Contraseña"  [ngClass]="{'input__invalid': isValidField('password')}">
+                @if(isValidField('password')){    
+                    <small class="text__invalid">{{getFieldError('password')}}</small>
+                    }
+            </div>
+            <div class="mt-3">
+                <label for="repassword" class="form__label">Confirmar contraseña</label>
+                <input type="password"  formControlName="repassword" id="repassword" class="form__input" placeholder="Contraseña"  [ngClass]="{'input__invalid': isValidField('password')}">
+                @if(isValidField('repassword')){    
+                    <small class="text__invalid">{{getFieldError('repassword')}}</small>
+                    }
+            </div>
+            <div class="mt-3">
+                <label for="">Seleccionar rol</label>
+                <div>
+                    <input type="radio" formControlName="role" id="" value="STUDENT">
+                    <label for="">Estudiante</label>
+
+                    <input type="radio" formControlName="role" id="" value="MODERATOR">
+                    <label for="">Moderador</label>
+                </div>
+            </div>
+            <a [routerLink]="['/auth/login']">Iniciar sesion</a>
+            <div class="mb-3">
+                <button type="submit"  class="button button__primary">Crear cuenta</button>
+            </div>
+        </form>
+        <figure class="card__image">
+            <img class="image" src="https://images.unsplash.com/photo-1610484826967-09c5720778c7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="imagen-estudio-en-casa">
+        </figure>
+    </div>
+</div>

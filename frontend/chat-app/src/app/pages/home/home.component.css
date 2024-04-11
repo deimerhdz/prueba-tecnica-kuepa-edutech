@@ -32,6 +32,13 @@
     font-weight: 700;
     text-align: right;
 }
+.link-sala{
+    text-decoration: underline;
+}
+.message__role{
+    font-size: 10px;
+    font-weight: 700;
+}
 #messages-input{
     width: 100%;
     display: flex;

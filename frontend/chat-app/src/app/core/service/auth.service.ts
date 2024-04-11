@@ -7,6 +7,7 @@ import { User } from '../interfaces/user.interface';
 import { AuthStatus } from '../enums/auth-status.enum';
 import { LoginResponse } from '@core/interfaces/response-login.interface';
 import { CheckTokenResponse } from '@core/interfaces/check-token-response';
+import { Register } from '../interfaces/register.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +54,12 @@ export class AuthService {
       }))
   }
 
+  register(user:Register){
+    return this.http.post<User>(`${this.url}/auth/register`,user).pipe(
+      catchError(err=> throwError(()=>{
+        return err.error.error})
+      ));
+  }
   logout(){
     localStorage.removeItem('token');
     this._authStatus.set(AuthStatus.NOTAUTHENTICATED);

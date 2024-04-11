@@ -1,4 +1,4 @@
 export interface Login{
-    admin:string;
+    username:string;
     password:string;
 }

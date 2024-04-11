@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
-<div class="content">
-    <div class="content__class">
+<div class="content" *ngIf="showSala">
+    <div class="content__class" >
         <div class="content__description">
             <iframe width="100%" height="315" src="https://www.youtube.com/embed/q3PKNySW6LQ?si=Zg92pidYTvUKHflb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <h3 class="title">Clase 1 ¿Qué es una Ecuación Diferencial? Tipos de ecuaciones diferenciales, solución de ED</h3>
@@ -16,9 +16,11 @@
         <div id="messages">
             @for( item of messages;track item._id){
                 <div class="message">
-                    <span class="message__item">{{item.message}}</span>
+                    <span class="message__item">
+                        <p class="message__role">{{item.user.role}}</p>
+                        {{item.message}}
+                    </span>
                     <p class="message__user"> <span title="{{item.user.name}}" class="icon-user">{{item.user.name | slice :0:1}}</span></p>
-                    <p>{{item.user.role}}</p>
                 </div>
             }
 
@@ -27,5 +29,5 @@
             <input type="text" class="form__input" [(ngModel)]="message" >
             <button type="button" class="button button__primary" (click)="sendMessage()">Enviar</button>
         </div>
-    </div>
+    </div> 
 </div>

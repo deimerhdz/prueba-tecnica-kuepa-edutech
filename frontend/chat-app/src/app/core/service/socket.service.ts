@@ -22,6 +22,10 @@ export class SocketService extends Socket{
     }
    });
   }
+
+  public allMessage$(){
+    this.ioSocket.emit('get-messages', 'hola');
+}
   public sendMessage$(message:string){
         this.ioSocket.emit('send-message', message);
   }

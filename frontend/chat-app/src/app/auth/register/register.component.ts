@@ -1,33 +1,38 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
-import { AuthService } from '@core/service/auth.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '@app/core/service/auth.service';
 import { ValidatorService } from '@app/core/service/validator.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule,RouterModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css'
 })
-export class LoginComponent {
+export class RegisterComponent {
   private router:Router = inject(Router);
   private authService:AuthService = inject(AuthService);
   private validatorService:ValidatorService = inject(ValidatorService);
   private fb:FormBuilder = inject(FormBuilder);
   public form:FormGroup = this.fb.group({
+    name:['',Validators.required],
     username:['',Validators.required],
-    password:['',Validators.required]
+    password:['',Validators.required],
+    repassword:['',Validators.required],
+    role:['',Validators.required]
   })
-  login(){
+  register(){
     if(this.form.invalid){
       this.form.markAllAsTouched();
       return;
     }
-    this.authService.login(this.form.value).subscribe({
+    console.log(this.form.value);
+    
+    this.authService.register(this.form.value).subscribe({
       next:(response)=>{
         if(response){
           this.router.navigateByUrl('/home')
