@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { Message } from '@app/core/interfaces/message.interface';
 import { MessageService } from '@app/core/service/messages.service';
 import { SocketService } from '@app/core/service/socket.service';
@@ -21,15 +21,21 @@ export class HomeComponent implements OnInit {
   public message:string ='';
   public messages:Message[] =[];
   private messageService:MessageService = inject(MessageService);
+  private sockectService:SocketService = inject(SocketService);
 
-  constructor(private sockectService:SocketService){
-    this.sockectService.messages$().subscribe(data=>{
-      this.messages = data.messages;
-    })
+  constructor(){
+    
   }
   ngOnInit(): void {
-   
-    this.sockectService.allMessage$();
+    setTimeout (() => { 
+      this.sockectService.ioSocket.emit('get-messages', 'hola');
+      console.log(this.sockectService.ioSocket);
+     
+   }, 5000)
+
+   this.sockectService.messages$().subscribe(data=>{
+    this.messages = data.messages;
+  })
     // this.getAllMeessages();
   }
   getAllMeessages(){
