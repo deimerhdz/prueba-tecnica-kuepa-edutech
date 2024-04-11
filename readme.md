@@ -3,11 +3,11 @@
 Prueba tecnica para el puesto de desarrollador fullstack.
 
 ## Tecnologias
-  -Node js
-  -Express
-  -Socket.io
-  -Mongodb
-  -Angular 17
+  - Node js
+  - Express
+  - Socket.io
+  - Mongodb
+  - Angular 17
 ## Requisitos de instalacion
 
 Docker para [windows](https://docs.docker.com/desktop/install/windows-install/) o [linux](https://docs.docker.com/desktop/install/linux-install/) dependiendo el sistema operativo.
@@ -36,6 +36,21 @@ Acceder en la ruta raiz del proyecto ``backend`` y ejecutar los comandos en el s
   docker-compose build
   docker-compose up -d
 ```
+
+## Configuracion  frontend
+
+  Requisitos
+ 
+  - [node](https://nodejs.org/en)
+  - [typescript](https://www.typescriptlang.org/).
+
+  Acceder a la carpeta ``frontend/chat-app`` y ejecutar los siguientes comandos
+  ```
+    npm install
+    ng serve
+  ```
+
+  luego abrir una ventana en el navegador en la ruta ``http://localhost:4200/``
 
 ## Author  
 
