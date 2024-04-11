@@ -10,7 +10,7 @@
             <p class="text">Registrate para continuar</p>
             <div class="mt-3">
                 <label for="name" class="form__label">Nombre</label>
-                <input type="text" formControlName="name" id="name" class="form__input" placeholder="Usuario"  [ngClass]="{'input__invalid': isValidField('username')}">
+                <input type="text" formControlName="name" id="name" class="form__input" placeholder="Nombre"  [ngClass]="{'input__invalid': isValidField('username')}">
                 @if(isValidField('name')){    
                     <small class="text__invalid">{{getFieldError('name')}}</small>
                     }
@@ -32,7 +32,7 @@
             </div>
             <div class="mt-3">
                 <label for="repassword" class="form__label">Confirmar contraseña</label>
-                <input type="password"  formControlName="repassword" id="repassword" class="form__input" placeholder="Contraseña"  [ngClass]="{'input__invalid': isValidField('password')}">
+                <input type="password"  formControlName="repassword" id="repassword" class="form__input" placeholder="Repetir contraseña"  [ngClass]="{'input__invalid': isValidField('password')}">
                 @if(isValidField('repassword')){    
                     <small class="text__invalid">las contraseña deben ser iguales</small>
                     }
