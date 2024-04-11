@@ -1,7 +1,13 @@
-# Foobar
+# Prueba tecnica kuepa edutech 
 
-Foobar is a Python library for dealing with word pluralization.
+Prueba tecnica para el puesto de desarrollador fullstack.
 
+## Tecnologias
+  -Node js
+  -Express
+  -Socket.io
+  -Mongodb
+  -Angular 17
 ## Requisitos de instalacion
 
 Docker para [windows](https://docs.docker.com/desktop/install/windows-install/) o [linux](https://docs.docker.com/desktop/install/linux-install/) dependiendo el sistema operativo.
