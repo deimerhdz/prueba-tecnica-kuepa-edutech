@@ -21,8 +21,7 @@ export class HomeComponent implements OnInit {
   public message:string ='';
   public messages:Message[] =[];
   private messageService:MessageService = inject(MessageService);
- 
-  private router:Router = inject(Router);
+
   constructor(private sockectService:SocketService){
     this.sockectService.messages$().subscribe(data=>{
       this.messages = data.messages;
