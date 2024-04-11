@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="content">
+    <div class="content__class">
+        <div class="content__description">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/q3PKNySW6LQ?si=Zg92pidYTvUKHflb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h3 class="title">Clase 1 ¿Qué es una Ecuación Diferencial? Tipos de ecuaciones diferenciales, solución de ED</h3>
+            <hr>
+            <p class="text">Una ecuación diferencial es una ecuación matemática que relaciona una función con sus derivadas. En la matemática aplicada, las funciones usualmente representan cantidades físicas, las derivadas representan sus razones de cambio y la ecuación define la relación entre ellas. Como estas relaciones son muy comunes, las ecuaciones diferenciales juegan un rol primordial en diversas disciplinas, incluyendo la ingeniería, la física, la química, la economía y la biología.</p>
+            <figure class="content__image">
+                <img  class="image"src="https://blogs.ugto.mx/rea/wp-content/uploads/sites/71/2021/11/Captura-de-Pantalla-2021-11-11-a-las-13.45.44.png" alt="imagen de ecuaciones diferenciales">
+            </figure>
+        </div>
+    </div>
+    <div class="content__messages">
+        <h3>Sala de chat</h3>
+        <div id="messages">
+            @for( item of messages;track item._id){
+                <div class="message">
+                    <span class="message__item">{{item.message}}</span>
+                    <p class="message__user"> <span title="{{item.user.name}}" class="icon-user">{{item.user.name | slice :0:1}}</span></p>
+                    <p>{{item.user.role}}</p>
+                </div>
+            }
+
+        </div>
+        <div id="messages-input">
+            <input type="text" class="form__input" [(ngModel)]="message" >
+            <button type="button" class="button button__primary" (click)="sendMessage()">Enviar</button>
+        </div>
+    </div>
+</div>

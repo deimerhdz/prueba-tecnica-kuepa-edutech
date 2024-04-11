@@ -1,0 +1,45 @@
+.nav{
+
+ 
+    max-width: 1440px;
+    margin: 0 auto;
+
+}
+
+.menu{
+    background-color: #04D99D;
+ 
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    padding: 0 0.5rem;
+}
+#user{
+    display: block;
+    text-align: right;
+    font-size: 18px;
+}
+.menu a{
+    color: white;
+    text-decoration: none;
+}
+.menu__items{
+    display: flex;
+    gap: 8px;
+}
+.link{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+.link:hover{
+    color: white;
+    text-decoration: underline;
+    border-bottom: 2px solid white;
+
+}

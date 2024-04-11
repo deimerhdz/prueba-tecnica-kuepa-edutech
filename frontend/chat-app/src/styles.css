@@ -1,0 +1,170 @@
+/* You can add global styles to this file, and also import other style files */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+:root{
+    /* --color-primary:#BF1B39; */
+    --color-primary:#F23D5E;
+    --color-button:#04D99D;
+    --color-button--hover:#05986f;
+    --color-white:#ffffff;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.content{
+    width: 100%;
+    height: 100%;
+}
+.card{
+    width: 100%;
+    display: grid;
+    gap: 32px;
+}
+.card__form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.card__image{
+    display: none;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+.icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.text{
+    width: 100%;
+    text-align: center;
+}
+/* FONTS */
+.title{
+    font-size: 38px;
+    color: var(--color-primary)
+}
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+.mt-3{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    width: 100%;
+    gap: 4px;
+}
+
+.form__input{
+    width: 100%;
+    padding: 10px 6px;
+    border-radius: 4px;
+    border: 1px solid #cccc;
+    outline-color: #2b2b2b;
+}
+.text__invalid{
+    color: var(--color-primary);
+    font-size: 12px;
+}
+.button{
+    padding: 10px 26px;
+    text-align: center;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    transition: all 0.5s ease;
+} 
+.button__primary{
+    background-color: var(--color-button);
+    color: var(--color-white);
+}
+.button__primary:hover{
+    background-color: var(--color-button--hover);
+}
+@media screen and (min-width:768px) {
+    .card{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .card__form{
+        width: 50%;
+        margin: 0 auto;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .card__image{
+        display: block;
+        height: 100%;
+    }
+}
